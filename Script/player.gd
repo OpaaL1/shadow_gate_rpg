@@ -10,32 +10,28 @@ func _physics_process(delta):
 	player_movement(delta)
 
 func player_movement(delta):
+	var x_arah = Input.get_axis("ui_left", "ui_right") #inputan untuk arah kiri kanan
+	var y_arah = Input.get_axis("ui_up", "ui_down") #inputan untuk arah atas bawah
+	var arah = Vector2 (x_arah, y_arah).normalized()
 
-	if Input.is_action_pressed("ui_right"):
-		posisi_awal = "right"
-		play_anim(1)
-		velocity.x = speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_left"):
-		posisi_awal = "left"
-		play_anim(1)
-		velocity.x = -speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_down"):
-		posisi_awal = "down"
-		play_anim(1)
-		velocity.x = 0
-		velocity.y = speed
-	elif Input.is_action_pressed("ui_up"):
-		posisi_awal = "up"
-		play_anim(1)
-		velocity.x = 0
-		velocity.y = -speed
-	else:
-		play_anim(0)
-		velocity.x = 0
-		velocity.y = 0
+	velocity = arah * speed
 	
+	if x_arah != 0:
+		if x_arah > 0:
+			posisi_awal = "right"
+		else:
+			posisi_awal = "left"
+	elif y_arah != 0:
+		if y_arah > 0:
+			posisi_awal = "down"
+		else:
+			posisi_awal = "up" 
+	
+	if arah != Vector2.ZERO:
+		play_anim(1)
+	else :
+		play_anim(0)
+
 	move_and_slide()
 
 func play_anim(movement):

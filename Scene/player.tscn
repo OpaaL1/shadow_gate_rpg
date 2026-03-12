@@ -282,8 +282,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8w33"]
-radius = 7.0
-height = 26.0
+radius = 6.0
+height = 12.0
 
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -296,5 +296,10 @@ sprite_frames = SubResource("SpriteFrames_71nu8")
 animation = &"run_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_y8w33")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
