@@ -6,17 +6,14 @@ var stopping_distance = 30
 
 func  _physics_process(delta: float) -> void:
     if chase_player and player:
-        # 1. Hitung jarak ke player
-        var arah = (player.position - position).normalized()
+        var arah = (player.position - position).normalized() #menghitung jarak player
         var distance = position.distance_to(player.position)
-        
-        # 2. Hanya bergerak jika jarak lebih besar dari stopping_distance
-        if distance > stopping_distance:
+ 
+        if distance > stopping_distance: #mengecek jarak player dengan enemy
             velocity = arah * speed
             move_and_slide()
             update_animation(arah)
         else:
-            # Jika sudah dekat, berhenti bergerak tapi tetap hadap player (opsional)
             velocity = Vector2.ZERO
             update_idle_animation(arah)
     else:
