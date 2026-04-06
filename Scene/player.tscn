@@ -293,7 +293,7 @@ script = ExtResource("1_y8w33")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_71nu8")
-animation = &"run_side"
+animation = &"run_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
@@ -303,3 +303,9 @@ shape = SubResource("CapsuleShape2D_y8w33")
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="dashTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="ghostTimer" type="Timer" parent="."]
+wait_time = 0.5
