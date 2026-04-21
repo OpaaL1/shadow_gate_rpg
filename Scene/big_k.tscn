@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dc1wjptu5dmlq"]
+[gd_scene load_steps=49 format=3 uid="uid://dc1wjptu5dmlq"]
 
 [ext_resource type="Texture2D" uid="uid://c5w3331dp2eta" path="res://Bahan/BigK-Sheet.png" id="1_6enyj"]
 [ext_resource type="Script" uid="uid://dfbi0mr4bnoae" path="res://Script/big_k.gd" id="1_c88qe"]
@@ -336,6 +336,9 @@ radius = 99.08077
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuaxy"]
 radius = 15.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_c88qe"]
+radius = 17.029387
+
 [node name="BigK" type="CharacterBody2D"]
 position = Vector2(-1, 0)
 script = ExtResource("1_c88qe")
@@ -345,18 +348,25 @@ position = Vector2(-7, -30)
 sprite_frames = SubResource("SpriteFrames_1xukw")
 animation = &"idle_front"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="detection_area" type="Area2D" parent="."]
 position = Vector2(116, 98)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 position = Vector2(-115, -114)
 shape = SubResource("CircleShape2D_sthbc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="fisik" type="CollisionShape2D" parent="."]
 position = Vector2(1, -16)
 shape = SubResource("CapsuleShape2D_tuaxy")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(1, -17)
+shape = SubResource("CircleShape2D_c88qe")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_area_2d_body_exited"]
