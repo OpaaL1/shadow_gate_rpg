@@ -4,6 +4,11 @@ var chase_player = false
 var player = null
 var stopping_distance = 30
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+#var hitbox
+var health = 150
+var is_dead = false
+
 func  _physics_process(delta: float) -> void:
     if chase_player and player:
         var arah = (player.position - position).normalized() #menghitung jarak player
@@ -19,6 +24,7 @@ func  _physics_process(delta: float) -> void:
     else:
         velocity = Vector2.ZERO # Pastikan berhenti saat tidak mengejar
         $AnimatedSprite2D.play("idle_front")
+
 
 func update_animation(dir: Vector2):
     if abs(dir.x) > abs(dir.y): # ceh arah lebih ke horizontal atau vertikal
@@ -49,3 +55,18 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
     player = null
     chase_player = false
+
+func enemy():
+    pass
+
+func take_damage(amount):
+    health -= amount
+    print("Darah musuh sisa: ", health)
+
+    if health <= 0:
+        die()
+
+func die():
+    is_dead = true
+    print("Musuh Mati!")
+    queue_free()

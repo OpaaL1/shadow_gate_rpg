@@ -6,6 +6,18 @@ var dash_speed = 300
 var is_dash = false
 var current_speed
 
+#var hitbox
+var health = 100
+var stamina = 100
+var player_alive = true
+
+#state serangan
+var attack_ip = false 
+var can_attack = true
+
+@onready var anim_player = $AnimationPlayer
+@onready var animasi = $AnimatedSprite2D
+
 func _ready():
     $AnimatedSprite2D.play("idle_down")
 
@@ -13,8 +25,11 @@ func _ready():
         $dashTimer.timeout.connect(_on_dash_timer_timeout)
 
 func _physics_process(delta):
-    player_movement(delta)
-    dash()
+    if not attack_ip:
+        player_movement(delta)
+        dash()
+    
+    attack()
 
 # function untuk menentukan arah player
 func player_movement(delta):
@@ -40,6 +55,7 @@ func player_movement(delta):
     else :
         play_anim(0)
 
+    #dash
     if is_dash:
         current_speed = dash_speed
     else:
@@ -58,25 +74,26 @@ func play_anim(movement):
         if movement == 1:
             animasi.play("run_side")
         elif movement == 0:
-            animasi.play("idle_side")
+            
+                animasi.play("idle_side")
     elif posisi == "left":
         animasi.flip_h = true
         if movement == 1:
             animasi.play("run_side")
         elif movement == 0:
-            animasi.play("idle_side")
+                animasi.play("idle_side")
     elif posisi == "down":
         animasi.flip_h = false
         if movement == 1:
             animasi.play("run_down")
         elif movement == 0:
-            animasi.play("idle_down")
+                animasi.play("idle_down")
     elif posisi == "up":
         animasi.flip_h = false
         if movement == 1:
             animasi.play("run_up")
         elif movement == 0:
-            animasi.play("idle_up")
+                animasi.play("idle_up")
 
 #function untuk membuat dash-effect
 func dash():
@@ -101,3 +118,41 @@ func add_ghost():
     ghost.flip_h = $AnimatedSprite2D.flip_h
 
     get_tree().root.add_child(ghost)
+
+#function sword
+func _on_sword_hit_area_entered(area: Area2D) -> void:
+    var victim = area
+    victim = area.get_parent()
+    print("Pedang menyentuh sesuatu: ", area.name)
+    
+    if victim.has_method("take_damage"):
+        victim.take_damage(20)
+        print("Musuh kena tebas")
+
+func attack():
+    var posisi = posisi_awal
+
+    if Input.is_action_just_pressed("attack"):
+        attack_ip = true
+        can_attack = false
+
+        if posisi == "up":
+            animasi.flip_h = false
+            anim_player.play("up_attack")
+        elif posisi == "down":
+            animasi.flip_h = false
+            anim_player.play("down_attack")
+        elif posisi == "right":
+            animasi.flip_h = false
+            anim_player.play("side_attack")
+        elif posisi == "left":
+            animasi.flip_h = true
+            anim_player.play("side_attack_left")
+
+        stamina -= 10
+        print("Stamina sisa : ", stamina)
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+    if "attack" in anim_name:
+        attack_ip = false
+        can_attack = true
