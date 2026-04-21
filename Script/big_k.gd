@@ -5,9 +5,14 @@ var player = null
 var stopping_distance = 30
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var healthbar = $CanvasLayer/Healtbar
 #var hitbox
 var health = 150
 var is_dead = false
+
+func _ready() -> void:
+    healthbar.init_health(health)
+
 
 func  _physics_process(delta: float) -> void:
     if chase_player and player:
@@ -65,6 +70,8 @@ func take_damage(amount):
 
     if health <= 0:
         die()
+
+    healthbar.health = health
 
 func die():
     is_dead = true
