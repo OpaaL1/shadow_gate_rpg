@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://dc1wjptu5dmlq"]
+[gd_scene load_steps=50 format=3 uid="uid://dc1wjptu5dmlq"]
 
 [ext_resource type="Texture2D" uid="uid://c5w3331dp2eta" path="res://Bahan/BigK-Sheet.png" id="1_6enyj"]
 [ext_resource type="Script" uid="uid://dfbi0mr4bnoae" path="res://Script/big_k.gd" id="1_c88qe"]
+[ext_resource type="PackedScene" uid="uid://jjyce1xqtijg" path="res://Scene/healtbar.tscn" id="3_uxq76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c88qe"]
 atlas = ExtResource("1_6enyj")
@@ -346,7 +347,7 @@ script = ExtResource("1_c88qe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7, -30)
 sprite_frames = SubResource("SpriteFrames_1xukw")
-animation = &"idle_front"
+animation = &"idle_side"
 
 [node name="detection_area" type="Area2D" parent="."]
 position = Vector2(116, 98)
@@ -367,6 +368,22 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(1, -17)
 shape = SubResource("CircleShape2D_c88qe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Healtbar" parent="CanvasLayer" instance=ExtResource("3_uxq76")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -32.0
+offset_right = 151.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 150.0
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_area_2d_body_exited"]
