@@ -122,7 +122,7 @@ func add_ghost():
 #function sword
 func _on_sword_hit_area_entered(area: Area2D) -> void:
     var victim = area
-    victim = area.get_parent()
+    victim = area.owner
     print("Pedang menyentuh sesuatu: ", area.name)
     
     if victim.has_method("take_damage"):
