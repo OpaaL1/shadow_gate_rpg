@@ -331,23 +331,33 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_c88qe"]
+radius = 17.029387
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_sthbc"]
 radius = 99.08077
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuaxy"]
 radius = 15.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c88qe"]
-radius = 17.029387
-
 [node name="BigK" type="CharacterBody2D"]
 position = Vector2(-1, 0)
 script = ExtResource("1_c88qe")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7, -30)
+[node name="pivot" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pivot"]
+position = Vector2(-7, -32)
 sprite_frames = SubResource("SpriteFrames_1xukw")
-animation = &"idle_side"
+animation = &"walk_side"
+
+[node name="hurtbox" type="Area2D" parent="pivot"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/hurtbox"]
+position = Vector2(1, -17)
+shape = SubResource("CircleShape2D_c88qe")
 
 [node name="detection_area" type="Area2D" parent="."]
 position = Vector2(116, 98)
@@ -360,14 +370,6 @@ shape = SubResource("CircleShape2D_sthbc")
 [node name="fisik" type="CollisionShape2D" parent="."]
 position = Vector2(1, -16)
 shape = SubResource("CapsuleShape2D_tuaxy")
-
-[node name="hurtbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(1, -17)
-shape = SubResource("CircleShape2D_c88qe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

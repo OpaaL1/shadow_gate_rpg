@@ -4,7 +4,7 @@ var chase_player = false
 var player = null
 var stopping_distance = 30
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $pivot/AnimatedSprite2D
 @onready var healthbar = $CanvasLayer/Healtbar
 #var hitbox
 var health = 150
@@ -28,28 +28,36 @@ func  _physics_process(delta: float) -> void:
             update_idle_animation(arah)
     else:
         velocity = Vector2.ZERO # Pastikan berhenti saat tidak mengejar
-        $AnimatedSprite2D.play("idle_front")
+        animated_sprite_2d.play("idle_front")
 
 
 func update_animation(dir: Vector2):
-    if abs(dir.x) > abs(dir.y): # ceh arah lebih ke horizontal atau vertikal
-        $AnimatedSprite2D.play("walk_side")
-        $AnimatedSprite2D.flip_h = dir.x > 0
-    else:
-        if dir.y > 0:
-            $AnimatedSprite2D.play("walk_front")
+    if abs(dir.x) > abs(dir.y): 
+        animated_sprite_2d.play("walk_side")
+        if dir.x > 0:
+            $pivot.scale.x = -1
         else:
-            $AnimatedSprite2D.play("walk_back")
+            $pivot.scale.x = 1
+    else:
+        $pivot.scale.x = 1
+        if dir.y > 0:
+            animated_sprite_2d.play("walk_front")
+        else:
+            animated_sprite_2d.play("walk_back")
 
 func update_idle_animation(dir: Vector2):
-    if abs(dir.x) > abs(dir.y): # ceh arah lebih ke horizontal atau vertikal
-        $AnimatedSprite2D.play("idle_side")
-        $AnimatedSprite2D.flip_h = dir.x > 0
-    else:
-        if dir.y > 0:
-            $AnimatedSprite2D.play("idle_front")
+    if abs(dir.x) > abs(dir.y): 
+        animated_sprite_2d.play("idle_side")
+        if dir.x > 0:
+            $pivot.scale.x = -1
         else:
-            $AnimatedSprite2D.play("idle_back")
+            $pivot.scale.x = 1
+    else:
+        $pivot.scale.x = 1
+        if dir.y > 0:
+            animated_sprite_2d.play("idle_front")
+        else:
+            animated_sprite_2d.play("idle_back")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
