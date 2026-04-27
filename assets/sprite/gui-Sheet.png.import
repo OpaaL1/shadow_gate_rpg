@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgfsk26wevrg2"
-path="res://.godot/imported/World.png-0e5fcb01b851a49799f6ef1e87e2f104.ctex"
+uid="uid://chrdlqy77uuvm"
+path="res://.godot/imported/gui-Sheet.png-0ff2266ccf7259c7492c2ec23bf9f89f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bahan/World.png"
-dest_files=["res://.godot/imported/World.png-0e5fcb01b851a49799f6ef1e87e2f104.ctex"]
+source_file="res://assets/sprite/gui-Sheet.png"
+dest_files=["res://.godot/imported/gui-Sheet.png-0ff2266ccf7259c7492c2ec23bf9f89f.ctex"]
 
 [params]
 

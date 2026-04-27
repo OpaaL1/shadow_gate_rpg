@@ -1,8 +1,8 @@
 [gd_scene load_steps=50 format=3 uid="uid://dc1wjptu5dmlq"]
 
-[ext_resource type="Texture2D" uid="uid://c5w3331dp2eta" path="res://Bahan/BigK-Sheet.png" id="1_6enyj"]
-[ext_resource type="Script" uid="uid://dfbi0mr4bnoae" path="res://Script/big_k.gd" id="1_c88qe"]
-[ext_resource type="PackedScene" uid="uid://jjyce1xqtijg" path="res://Scene/healtbar.tscn" id="3_uxq76"]
+[ext_resource type="Texture2D" uid="uid://c5w3331dp2eta" path="res://assets/sprite/BigK-Sheet.png" id="1_6enyj"]
+[ext_resource type="Script" uid="uid://dfbi0mr4bnoae" path="res://script/entities/big_k.gd" id="1_c88qe"]
+[ext_resource type="PackedScene" uid="uid://jjyce1xqtijg" path="res://Scene/ui/healtbar.tscn" id="3_uxq76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c88qe"]
 atlas = ExtResource("1_6enyj")

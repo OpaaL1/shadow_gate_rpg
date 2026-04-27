@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5w3331dp2eta"
-path="res://.godot/imported/BigK-Sheet.png-63a450c7896f6c816b4f59c8dcd9fa1f.ctex"
+uid="uid://bjp1a27oj2v4f"
+path="res://.godot/imported/Adventure-Sheet.png-5ff7b170067cdc7be9e208343c2f4ab0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bahan/BigK-Sheet.png"
-dest_files=["res://.godot/imported/BigK-Sheet.png-63a450c7896f6c816b4f59c8dcd9fa1f.ctex"]
+source_file="res://assets/sprite/Adventure-Sheet.png"
+dest_files=["res://.godot/imported/Adventure-Sheet.png-5ff7b170067cdc7be9e208343c2f4ab0.ctex"]
 
 [params]
 

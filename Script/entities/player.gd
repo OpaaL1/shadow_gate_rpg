@@ -108,7 +108,7 @@ func _on_dash_timer_timeout() -> void:
     is_dash = false
     $ghostTimer.stop()
 
-const GHOST_SCENE = preload("res://Scene/ghost.tscn")
+const GHOST_SCENE = preload("res://Scene/actors/ghost.tscn")
 
 #function copy ghost
 func add_ghost():

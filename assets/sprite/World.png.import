@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjp1a27oj2v4f"
-path="res://.godot/imported/Adventure-Sheet.png-5916fc34b44be8c94198a22ec9b1f877.ctex"
+uid="uid://cgfsk26wevrg2"
+path="res://.godot/imported/World.png-4cd8a05bd439d8a645c24adf8e43648e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bahan/Adventure-Sheet.png"
-dest_files=["res://.godot/imported/Adventure-Sheet.png-5916fc34b44be8c94198a22ec9b1f877.ctex"]
+source_file="res://assets/sprite/World.png"
+dest_files=["res://.godot/imported/World.png-4cd8a05bd439d8a645c24adf8e43648e.ctex"]
 
 [params]
 
