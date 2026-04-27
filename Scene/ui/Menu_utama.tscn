@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://buyg4dyjvh7xa" path="res://Screenshot 2026-01-23 155917.png" id="2_f5hml"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhq0q"]
-texture = ExtResource("2_fbuxy")
+texture = ExtResource("2_f5hml")
 modulate_color = Color(0.15199637, 0.15199634, 0.15199634, 1)
 
 [sub_resource type="Image" id="Image_f5hml"]
