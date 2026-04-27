@@ -1,10 +1,11 @@
-[gd_scene load_steps=71 format=3 uid="uid://bsrr8yqfhvut7"]
+[gd_scene load_steps=72 format=3 uid="uid://bsrr8yqfhvut7"]
 
 [ext_resource type="Script" uid="uid://cqjxvm74j8qc0" path="res://script/entities/player.gd" id="1_y8w33"]
 [ext_resource type="Texture2D" uid="uid://cnsmdw7oqtmas" path="res://assets/sprite/character attack-Sheet.png" id="2_58ae2"]
 [ext_resource type="Texture2D" uid="uid://bjp1a27oj2v4f" path="res://assets/sprite/Adventure-Sheet.png" id="2_xa75v"]
 [ext_resource type="Texture2D" uid="uid://chrdlqy77uuvm" path="res://assets/sprite/gui-Sheet.png" id="4_ivevv"]
 [ext_resource type="PackedScene" uid="uid://jjyce1xqtijg" path="res://Scene/ui/healtbar.tscn" id="5_r6jsd"]
+[ext_resource type="PackedScene" uid="uid://b0txeq415dott" path="res://Scene/ui/Stamina.tscn" id="6_7c1n6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa75v"]
 atlas = ExtResource("2_58ae2")
@@ -798,11 +799,19 @@ scale = Vector2(1.7968749, 1.53125)
 sprite_frames = SubResource("SpriteFrames_vwcqk")
 
 [node name="Healtbar" parent="CanvasLayer" instance=ExtResource("5_r6jsd")]
+z_index = 0
 offset_left = 32.0
-offset_top = 32.0
+offset_top = 31.0
 offset_right = 185.0
 offset_bottom = 33.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_ivevv")
+
+[node name="Stamina" parent="CanvasLayer" instance=ExtResource("6_7c1n6")]
+z_index = 0
+offset_left = 36.0
+offset_top = 36.0
+offset_right = 171.0
+offset_bottom = 38.0
 
 [connection signal="area_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

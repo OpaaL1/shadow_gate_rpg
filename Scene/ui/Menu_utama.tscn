@@ -1,10 +1,10 @@
 [gd_scene load_steps=22 format=4 uid="uid://cclkjusugfvqp"]
 
-[ext_resource type="Script" path="res://Scene/menu_utama.gd" id="1_pq470"]
-[ext_resource type="Texture2D" uid="uid://buyg4dyjvh7xa" path="res://Screenshot 2026-01-23 155917.png" id="2_f5hml"]
+[ext_resource type="Script" path="res://Scene/menu_utama.gd" id="1_wi1jr"]
+[ext_resource type="Texture2D" uid="uid://buyg4dyjvh7xa" path="res://Screenshot 2026-01-23 155917.png" id="2_fbuxy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhq0q"]
-texture = ExtResource("2_f5hml")
+texture = ExtResource("2_fbuxy")
 modulate_color = Color(0.15199637, 0.15199634, 0.15199634, 1)
 
 [sub_resource type="Image" id="Image_f5hml"]
@@ -775,7 +775,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pq470")
+script = ExtResource("1_wi1jr")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
