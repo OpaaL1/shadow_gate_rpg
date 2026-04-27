@@ -1,12 +1,7 @@
 [gd_scene format=4 uid="uid://cclkjusugfvqp"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" path="res://Scene/menu_utama.gd" id="1_wi1jr"]
-[ext_resource type="Texture2D" uid="uid://buyg4dyjvh7xa" path="res://Screenshot 2026-01-23 155917.png" id="2_fbuxy"]
-=======
 [ext_resource type="Script" uid="uid://1dgqm2888f6i" path="res://Script/ui/menu_utama.gd" id="1_wi1jr"]
 [ext_resource type="Texture2D" uid="uid://buyg4dyjvh7xa" path="res://Screenshot 2026-01-23 155917.png" id="2_f5hml"]
->>>>>>> 51ba37615540f4a8cdc408a09a1be66ea895f7b8
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhq0q"]
 texture = ExtResource("2_fbuxy")
