@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Shadow Gate RPG"
 run/main_scene="uid://bsrr8yqfhvut7"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -25,7 +25,11 @@ Global="*res://Script/global.gd"
 
 [display]
 
-window/stretch/scale=2.0
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 
@@ -243,3 +247,13 @@ attack={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+viewport/hdr_2d=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
+2d/hdr_2d=false
+2d/canvas_textures/default_texture_filter=0
+2d/stretch/scale_mode="fractional"
+2d/stretch/mode="disabled"
+2d/size/mode=0
+2d/size/viewport_height=648
+2d/size/viewport_width=1152

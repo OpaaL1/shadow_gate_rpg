@@ -379,12 +379,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -32.0
-offset_right = 151.0
-offset_bottom = -28.0
+offset_left = -96.0
+offset_top = -22.0
+offset_right = 97.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_vertical = 8
 max_value = 150.0
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_area_2d_body_entered"]
