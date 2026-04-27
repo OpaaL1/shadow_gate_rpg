@@ -1,8 +1,8 @@
 [gd_scene load_steps=50 format=3 uid="uid://dc1wjptu5dmlq"]
 
-[ext_resource type="Texture2D" uid="uid://c5w3331dp2eta" path="res://Bahan/BigK-Sheet.png" id="1_6enyj"]
-[ext_resource type="Script" uid="uid://dfbi0mr4bnoae" path="res://Script/big_k.gd" id="1_c88qe"]
-[ext_resource type="PackedScene" uid="uid://jjyce1xqtijg" path="res://Scene/healtbar.tscn" id="3_uxq76"]
+[ext_resource type="Texture2D" uid="uid://c5w3331dp2eta" path="res://assets/sprite/BigK-Sheet.png" id="1_6enyj"]
+[ext_resource type="Script" uid="uid://dfbi0mr4bnoae" path="res://script/entities/big_k.gd" id="1_c88qe"]
+[ext_resource type="PackedScene" uid="uid://jjyce1xqtijg" path="res://Scene/ui/healtbar.tscn" id="3_uxq76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c88qe"]
 atlas = ExtResource("1_6enyj")
@@ -379,12 +379,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -32.0
-offset_right = 151.0
-offset_bottom = -28.0
+offset_left = -96.0
+offset_top = -22.0
+offset_right = 97.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_vertical = 8
 max_value = 150.0
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_area_2d_body_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjp1a27oj2v4f"
-path="res://.godot/imported/Adventure-Sheet.png-5916fc34b44be8c94198a22ec9b1f877.ctex"
+uid="uid://cnsmdw7oqtmas"
+path="res://.godot/imported/character attack-Sheet.png-06d56a2dd25be8730a1766f29788c1c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bahan/Adventure-Sheet.png"
-dest_files=["res://.godot/imported/Adventure-Sheet.png-5916fc34b44be8c94198a22ec9b1f877.ctex"]
+source_file="res://assets/sprite/character attack-Sheet.png"
+dest_files=["res://.godot/imported/character attack-Sheet.png-06d56a2dd25be8730a1766f29788c1c7.ctex"]
 
 [params]
 

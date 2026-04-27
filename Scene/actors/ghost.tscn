@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bj6cslnjfochs"]
 
-[ext_resource type="Script" uid="uid://daa5k8vamjcy7" path="res://Script/ghost.gd" id="1_ti0ue"]
+[ext_resource type="Script" uid="uid://daa5k8vamjcy7" path="res://script/entities/ghost.gd" id="1_10i7x"]
 
 [node name="ghost" type="Sprite2D"]
 modulate = Color(0.13033845, 0.4980679, 0.89329773, 1)
 z_index = 100
 centered = false
 offset = Vector2(-33, -46)
-script = ExtResource("1_ti0ue")
+script = ExtResource("1_10i7x")

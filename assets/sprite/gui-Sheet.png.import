@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5w3331dp2eta"
-path="res://.godot/imported/BigK-Sheet.png-63a450c7896f6c816b4f59c8dcd9fa1f.ctex"
+uid="uid://chrdlqy77uuvm"
+path="res://.godot/imported/gui-Sheet.png-0ff2266ccf7259c7492c2ec23bf9f89f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bahan/BigK-Sheet.png"
-dest_files=["res://.godot/imported/BigK-Sheet.png-63a450c7896f6c816b4f59c8dcd9fa1f.ctex"]
+source_file="res://assets/sprite/gui-Sheet.png"
+dest_files=["res://.godot/imported/gui-Sheet.png-0ff2266ccf7259c7492c2ec23bf9f89f.ctex"]
 
 [params]
 
