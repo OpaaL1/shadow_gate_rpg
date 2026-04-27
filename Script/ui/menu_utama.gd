@@ -12,7 +12,11 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed():
-	print("Start pressed")
+	Global.player_current_attack = true
+	get_tree().change_scene_to_file("res://Scene/world/world.tscn")
+	
+	
+	
 
 
 func _on_option_pressed():
@@ -20,4 +24,4 @@ func _on_option_pressed():
 
 
 func _on_exit_pressed():
-	print("Exit pressed")
+	get_tree().quit()

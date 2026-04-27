@@ -1,7 +1,12 @@
-[gd_scene load_steps=22 format=4 uid="uid://cclkjusugfvqp"]
+[gd_scene format=4 uid="uid://cclkjusugfvqp"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://Scene/menu_utama.gd" id="1_wi1jr"]
 [ext_resource type="Texture2D" uid="uid://buyg4dyjvh7xa" path="res://Screenshot 2026-01-23 155917.png" id="2_fbuxy"]
+=======
+[ext_resource type="Script" uid="uid://1dgqm2888f6i" path="res://Script/ui/menu_utama.gd" id="1_wi1jr"]
+[ext_resource type="Texture2D" uid="uid://buyg4dyjvh7xa" path="res://Screenshot 2026-01-23 155917.png" id="2_f5hml"]
+>>>>>>> 51ba37615540f4a8cdc408a09a1be66ea895f7b8
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhq0q"]
 texture = ExtResource("2_fbuxy")
@@ -129,6 +134,15 @@ data = PackedByteArray("AAEAAAAQAQAABAAARFNJRwAAAAEAATpUAAAACEdQT1P83fxpAAEunAAA
 font_name = "Pixelout Personal Use Only"
 style_name = "Regular"
 msdf_pixel_range = 8
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
 cache/0/16/0/ascent = 12.0
 cache/0/16/0/descent = 4.0
 cache/0/16/0/underline_position = 2.0
@@ -768,7 +782,7 @@ bg_color = Color(0.48805398, 0.48805404, 0.48805392, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtvq1"]
 
-[node name="MenuUtama" type="Control"]
+[node name="MenuUtama" type="Control" unique_id=376698040]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -777,7 +791,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wi1jr")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1807347673]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -786,7 +800,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhq0q")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel" unique_id=1110317115]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -803,7 +817,7 @@ text = "GANTI DISINI"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=946393701]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -815,7 +829,7 @@ offset_bottom = -147.0
 grow_vertical = 0
 theme_override_constants/separation = 9
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1473524555]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -829,7 +843,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_uud6h")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rtvq1")
 text = "START"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1056186081]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -844,7 +858,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_uud6h")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rtvq1")
 text = "OPTION"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=2089909150]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
