@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://jjyce1xqtijg"]
 
-[ext_resource type="Script" uid="uid://dafkk1l088dbk" path="res://Script/healtbar.gd" id="1_xsag0"]
+[ext_resource type="Script" uid="uid://dafkk1l088dbk" path="res://script/ui/healtbar.gd" id="1_8qs8l"]
 
 [sub_resource type="Theme" id="Theme_xsag0"]
 
@@ -22,6 +22,8 @@ shadow_offset = Vector2(0, 1)
 bg_color = Color(0.8431838, 0.8431839, 0.84318364, 1)
 
 [node name="Healtbar" type="ProgressBar"]
+z_index = 1
+offset_top = 2.0
 offset_right = 240.0
 offset_bottom = 4.0
 theme = SubResource("Theme_xsag0")
@@ -29,7 +31,7 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_lcryi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lcryi")
 value = 80.0
 show_percentage = false
-script = ExtResource("1_xsag0")
+script = ExtResource("1_8qs8l")
 
 [node name="damagebar" type="ProgressBar" parent="."]
 z_index = -1
