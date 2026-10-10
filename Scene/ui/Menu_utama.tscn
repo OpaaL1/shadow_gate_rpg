@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://cclkjusugfvqp"]
+
+[ext_resource type="Script" uid="uid://1dgqm2888f6i" path="res://script/ui/menu_utama.gd" id="1_wi1jr"]
+[ext_resource type="Texture2D" uid="uid://cl0exexhx4pno" path="res://assets/sprite/MainMenu-Sheet.png" id="2_wi1jr"]
+[ext_resource type="FontFile" uid="uid://dftera01xje1x" path="res://assets/Font/m6x11.ttf" id="3_fbuxy"]
+[ext_resource type="Texture2D" uid="uid://cdp4mx52h0n46" path="res://assets/sprite/PinggirMenu.png" id="3_s20uk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhq0q"]
+texture = ExtResource("2_wi1jr")
+modulate_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fbuxy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aruli"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1cex"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s20uk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_111ce"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8gp18"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hu47"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1yppg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfyq6"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s20uk"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 300, 1)
+gravity = Vector3(0, 10, 0)
+color = Color(0.8036667, 0.38, 1, 1)
+
+[node name="MenuUtama" type="Control" unique_id=710615715]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wi1jr")
+
+[node name="Panel" type="Panel" parent="." unique_id=448084299]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhq0q")
+
+[node name="Indikator" type="Sprite2D" parent="." unique_id=413471283]
+position = Vector2(298, 185)
+texture = ExtResource("3_s20uk")
+offset = Vector2(0, 0.7)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=550251383]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_right = 46.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=845901074]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.7385699, 0.7881419, 0.9026874, 1)
+theme_override_fonts/font = ExtResource("3_fbuxy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fbuxy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aruli")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u1cex")
+text = "Play"
+flat = true
+
+[node name="Setting" type="Button" parent="VBoxContainer" unique_id=2143893794]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.7372549, 0.7882353, 0.9019608, 1)
+theme_override_fonts/font = ExtResource("3_fbuxy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s20uk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_111ce")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8gp18")
+text = "Setting"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1735995499]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.7372549, 0.7882353, 0.9019608, 1)
+theme_override_fonts/font = ExtResource("3_fbuxy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5hu47")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1yppg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hfyq6")
+text = "Quit"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=396424198]
+position = Vector2(316, 208)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_s20uk")
+
+[connection signal="mouse_exited" from="VBoxContainer" to="." method="_on_v_box_container_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Setting" to="." method="_on_setting_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Setting" to="." method="_on_setting_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
